@@ -34,14 +34,14 @@ Imports:
     lifecycle,
     methods,
     rlang,
-    tools
+    tools,
+    typed
 Suggests: 
     covr,
     knitr,
     rmarkdown,
     rpp,
     testthat (>= 3.0.0),
-    typed,
     withr
 Remotes:
     Q-language/rpp,
