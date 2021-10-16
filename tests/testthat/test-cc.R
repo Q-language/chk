@@ -16,21 +16,17 @@ test_that("cc with atomic vectors", {
 })
 
 test_that("cc errors", {
-  expect_chk_error(
+  expect_error(
     cc(1, conj = 1),
-    "^`conj` must be a string [(]non-missing character scalar[)][.]$"
   )
-  expect_chk_error(
+  expect_error(
     cc(1, conj = character(0)),
-    "^`conj` must be a string [(]non-missing character scalar[)][.]$"
   )
-  expect_chk_error(
-    cc(1, conj = as.character(1:2)),
-    "^`conj` must be a string [(]non-missing character scalar[)][.]$"
+  expect_error(
+    cc(1, conj = as.character(1:2))
   )
-  expect_chk_error(
+  expect_error(
     cc(1, brac = 1),
-    "^`brac` must inherit from S3 class 'character'[.]$"
   )
   expect_chk_error(
     cc(1, brac = character(0)),
@@ -40,9 +36,8 @@ test_that("cc errors", {
     cc(1, brac = as.character(1:3)),
     "^`length[(]brac[)]` must be between 1 and 2, not 3[.]$"
   )
-  expect_chk_error(
-    cc(1, sep = as.character(1:3)),
-    "^`sep` must be a string [(]non-missing character scalar[)][.]$"
+  expect_error(
+    cc(1, sep = as.character(1:3))
   )
 })
 

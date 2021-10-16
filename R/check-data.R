@@ -16,7 +16,8 @@
 #' try(check_data(data.frame(x = 2), list(y = 1L)))
 #' try(check_data(data.frame(x = 2), list(y = 1)))
 #' try(check_data(data.frame(x = 2), nrow = 2))
-check_data <- function(x, values = NULL, exclusive = FALSE, order = FALSE, nrow = numeric(0), key = character(0), x_name = NULL) {
+check_data <- function(x, values = NULL, exclusive = FALSE, order = FALSE,      # !q check_data <- ?function(x, values = NULL, exclusive = FALSE ?Logical(1), order = FALSE ?Logical(1),
+                        nrow = numeric(0), key = character(0), x_name = NULL) { # !q                         nrow = numeric(0), key = character(0) ?Character(), x_name = NULL ?Character(1, null_ok = TRUE)) {
   chk_data(x, "data.frame")
 
   if (is.null(values)) values <- structure(list(), .Names = character(0))

@@ -17,15 +17,16 @@
 #' @return A string.
 #' @export
 #'
+#' @name cc
 #' @examples
 #' cc(1:2)
 #' cc(1:2, conj = " or")
 #' cc(3:1, brac = "'")
 #' cc(1:11)
 #' cc(as.character(1:2))
-cc <- function(x, conj = ", ", sep = ", ",
-               brac = if (is.character(x) || is.factor(x)) "'" else "",
-               ellipsis = 10L, chk = TRUE) {
+cc <-              function(x         , conj = ", ", sep = ", ",                      # !q cc <- Character()? function(x = ?Any(), conj = ", " ?Character(1), sep = ", " ?Character(1),
+                             brac = if (is.character(x) || is.factor(x)) "'" else "", # !q                              brac = if (is.character(x) || is.factor(x)) "'" else "" ?Character(),
+                             ellipsis = 10L, chk = TRUE) {                            # !q                              ellipsis = 10L ?Any(1), chk = TRUE ?Logical(1)) {
   if (chk) {
     chk_string(conj)
     chk_string(sep)
@@ -39,7 +40,7 @@ cc <- function(x, conj = ", ", sep = ", ",
     return(character(0))
   }
   x <- p0(brac[1], x, brac[length(brac)])
-  n <- length(x)
+  n <- length(x) # not sure why not working with Integer                              # !q   Any(1)? n <- length(x) # not sure why not working with Integer
   if (n == 1L) {
     return(x)
   }
